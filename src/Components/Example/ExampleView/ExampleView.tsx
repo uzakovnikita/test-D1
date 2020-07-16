@@ -15,3 +15,14 @@ export const ExampleView: FunctionComponent<IExampleViewProps> = ({
         </div>
     )
 }
+
+// export const ExampleView = ({
+//     count
+// }: any): FunctionComponent<IExampleViewProps> => {
+//     return (<div className='block'>
+//             {count}
+//         </div>
+//     )
+// }
+
+
