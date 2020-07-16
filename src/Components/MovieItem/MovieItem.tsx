@@ -12,10 +12,11 @@ export class MovieItem extends React.Component {
         }
     } 
     render() {
-        const {onMouseEnter, onMouseLeave} = useMovieItem(this);
+        const use = useMovieItem(this)
         const state = this.state;
+        const props = {...use, state}
         return (
-            <MovieItemView {{...onMouseEnter, ...onMouseLeave, state}}/>
+            <MovieItemView {...props}/>
         )
     }
 }

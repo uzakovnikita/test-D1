@@ -5,11 +5,11 @@ interface State {
 }
 export const useMovieItem = (obj: State) => {
     const state = obj.state;
-    const onMouseEnter = () => {
+    const enter = () => {
         state.mouseEnter = 'enter';
     }
-    const onMouseLeave = () => {
+    const leave = () => {
         state.mouseEnter = 'leave';
     }
-    return {onMouseEnter, onMouseLeave}
+    return {enter, leave}
 }
