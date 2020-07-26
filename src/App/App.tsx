@@ -4,33 +4,53 @@ import './App.scss';
 import { MovieCard } from '../Components/MovieCard/MovieCard';
 import { GenreCard } from '../Components/GenreCard/GenreCard';
 import {Header} from '../Components/Header/Header';
+import { AppContext } from './AppContext';
 
-export function App() {
-  return (
-    <div className="App">
-      <Header />
-    </div>
-  );
+
+interface Props {};
+interface State {
+  userName: string,
+  handleChangeUserNameApp: Function,
+  handleChangeAutorized: Function,
+  autorized: string
 }
 
-{/* <Header>
-<Logo />
-<SearchForm />
-<LoginButton />
-</Header>
-<Main>
-<Tabs/>
-<New>
-  <MovieCard text='мульт в кино, выпуск №1013' image=''/>
-  <MovieCard/>
-  <MovieCard/>
-</New>
-<Genres>
-  <GenreCard/>
-  <GenreCard/>
-  <GenreCard/>
-</Genres>
-</Main>
-<Footer>
-<Footer__content/>
-</Footer> */}
+export class App extends React.Component<Props, State> {
+  handleChangeUserNameApp: (name: string) => void;
+  handleChangeAutorized: (autorized: React.MouseEvent) => void 
+  constructor (props: any) {
+    super(props);
+    this.handleChangeUserNameApp = (name) => {
+      this.setState({
+        userName: name,
+      })
+    }
+    this.handleChangeAutorized = (autorized) => {
+      console.log('aaa')
+      const newStatus = this.state.autorized === 'not' ? 'yes' : 'not';
+      this.setState({
+        autorized: newStatus
+      })
+    }
+    this.state = {
+      userName: '',
+      autorized: 'not',
+      handleChangeAutorized: this.handleChangeAutorized,
+      handleChangeUserNameApp: this.handleChangeUserNameApp
+    }
+  }
+  render () {
+    return (
+      <AppContext.Provider value = {{
+        userName: this.state.userName,
+        autorized: this.state.autorized,
+        handleChangeAutorized: this.handleChangeAutorized,
+        handleChangeUserNameApp: this.handleChangeUserNameApp,
+      }}>
+        <div className="App">
+          <Header />
+        </div>
+      </AppContext.Provider>  
+    );
+  }
+}

@@ -1,7 +1,13 @@
 import React from 'react';
 import {GenreCardView} from './GenreCardView/GenreCardView'
 
-export class GenreCard extends React.Component<{genre: string, img: string, imgAlt: string}> {
+interface Props {
+    genre: string,
+    img: string,
+    imgAlt: string
+}
+
+export class GenreCard extends React.Component<Props> {
     static defaultProps = {
         img: '',
         imgAlt: 'default-imgAlt',

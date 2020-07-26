@@ -1,19 +1,36 @@
-import React from 'react';
-import { LoginView } from './LoginView/LoginView';
+import React, { MouseEvent } from 'react';
+import { AppContext } from '../../App/AppContext';
+import { LoginViewEnter } from './LoginView/LoginViewEnter';
+import { LoginViewNotEnter } from './LoginView/LoginVIewNotEnter';
+import { Modal } from '../Modal/Modal';
 
-export class Login extends React.Component {
-    state: {view: string, userLogin: string, password: string, remember: boolean}
+interface Props {};
+interface State {
+    modal: string,
+}
+
+export class Login extends React.Component<Props, State> {
     constructor (props: any) {
         super(props);
         this.state = {
-            view: 'button',
-            userLogin: '',
-            password: '',
-            remember: false,
+            modal: 'not',
         }
     }
+    handleChangeModal = (e: React.MouseEvent): void => {
+        const newStatusModal = this.state.modal === 'not' ? 'yes' : 'not';
+        this.setState({
+            modal: newStatusModal
+        })
+    }
     render () {
-        const modal = 
-        const button = <button className="login__button">Войти</button>
+        const modalWindow = this.state.modal === 'yes' ? <Modal /> : null;
+        return <AppContext.Consumer>
+            {({autorized, userName}) => {
+                if (autorized === 'enter') {
+                    return (<LoginViewEnter/>)
+                } 
+                return (<><LoginViewNotEnter handle={this.handleChangeModal}/>{modalWindow}</>)
+            }}
+        </AppContext.Consumer>
     }
 }
