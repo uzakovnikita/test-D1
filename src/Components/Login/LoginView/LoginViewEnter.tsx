@@ -7,7 +7,7 @@ export class LoginViewEnter extends React.Component {
             {({userName, handleChangeAutorized}) => {
                 return <div className="login">
                     <span className="login__name">{userName}</span>
-                    <button className="login__exit" onClick={handleChangeAutorized}></button>
+                    <button className="login__exit" onClick={handleChangeAutorized}>Выйти</button>
                 </div>
             }}
         </AppContext.Consumer>

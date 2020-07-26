@@ -25,8 +25,8 @@ export class Login extends React.Component<Props, State> {
     render () {
         const modalWindow = this.state.modal === 'yes' ? <Modal /> : null;
         return <AppContext.Consumer>
-            {({autorized, userName}) => {
-                if (autorized === 'enter') {
+            {({autorized}) => {
+                if (autorized === 'yes') {
                     return (<LoginViewEnter/>)
                 } 
                 return (<><LoginViewNotEnter handle={this.handleChangeModal}/>{modalWindow}</>)

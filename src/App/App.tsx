@@ -17,16 +17,16 @@ interface State {
 
 export class App extends React.Component<Props, State> {
   handleChangeUserNameApp: (name: string) => void;
-  handleChangeAutorized: (autorized: React.MouseEvent) => void 
+  handleChangeAutorized: () => void 
   constructor (props: any) {
     super(props);
     this.handleChangeUserNameApp = (name) => {
       this.setState({
         userName: name,
       })
+      console.log('AAAA2')
     }
-    this.handleChangeAutorized = (autorized) => {
-      console.log('aaa')
+    this.handleChangeAutorized = () => {
       const newStatus = this.state.autorized === 'not' ? 'yes' : 'not';
       this.setState({
         autorized: newStatus
