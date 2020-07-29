@@ -39,7 +39,6 @@ export class App extends React.Component<Props, State> {
     this.setState({modal: updateModal})
   }
   handleSetModalFalse = (e: any) => {
-
     console.log(e.currentTarget === this.refInner.current)
     if (e.currentTarget !== this.refInner.current) {
       this.setState({modal: 'net'})
