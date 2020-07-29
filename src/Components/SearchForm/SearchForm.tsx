@@ -17,7 +17,7 @@ export class SearchForm extends React.Component {
     }
     handleSearch = async (e: React.MouseEvent) => {
         const response = await fetch(this.state.text);
-        console.log('hello, htc')
+        console.log(response)
     }
     render() {
         return (

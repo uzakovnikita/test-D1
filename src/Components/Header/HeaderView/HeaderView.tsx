@@ -1,4 +1,4 @@
-import React, { Children } from 'react';
+import React from 'react';
 import './HeaderView.scss';
 
 export class HeaderView extends React.Component {

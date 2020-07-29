@@ -1,18 +1,10 @@
 import React from 'react';
 
-interface handle {
-    (e: React.MouseEvent): void
-}
 
-interface Props {
-    handle: handle
-}
-
-export class LoginViewNotEnter extends React.Component<Props> {
+export class LoginViewNotEnter extends React.Component<any> {
     render() {
-        const handleClick = this.props.handle;
         return (<div className="login">
-            <button className="login__enter" onClick={handleClick}>Войти</button>
+            <button onClick={this.props.setModalTrue} className="login__enter">Войти</button>
         </div>)
     }
 }

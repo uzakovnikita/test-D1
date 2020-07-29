@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import './SearchFormView.scss';
 
 interface change {(x: React.FormEvent<HTMLInputElement>): void};

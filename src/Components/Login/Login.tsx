@@ -1,36 +1,17 @@
-import React, { MouseEvent } from 'react';
-import { AppContext } from '../../App/AppContext';
+import React, {FunctionComponent } from 'react';
 import { LoginViewEnter } from './LoginView/LoginViewEnter';
 import { LoginViewNotEnter } from './LoginView/LoginVIewNotEnter';
-import { Modal } from '../Modal/Modal';
 
-interface Props {};
-interface State {
-    modal: string,
+interface Props {
+    autorized: boolean,
+    userName: string,
+    setModalTrue: (arg: void) => void,
+    exit: (arg: any) => void
 }
 
-export class Login extends React.Component<Props, State> {
-    constructor (props: any) {
-        super(props);
-        this.state = {
-            modal: 'not',
-        }
-    }
-    handleChangeModal = (e: React.MouseEvent): void => {
-        const newStatusModal = this.state.modal === 'not' ? 'yes' : 'not';
-        this.setState({
-            modal: newStatusModal
-        })
-    }
-    render () {
-        const modalWindow = this.state.modal === 'yes' ? <Modal /> : null;
-        return <AppContext.Consumer>
-            {({autorized}) => {
-                if (autorized === 'yes') {
-                    return (<LoginViewEnter/>)
-                } 
-                return (<><LoginViewNotEnter handle={this.handleChangeModal}/>{modalWindow}</>)
-            }}
-        </AppContext.Consumer>
-    }
+export const Login: FunctionComponent<Props> = (props) => {
+    const { autorized, userName, setModalTrue, exit } = props;
+    const view = autorized ? <LoginViewEnter userName={userName} exit={exit}/> : 
+    <LoginViewNotEnter setModalTrue={setModalTrue}/>;
+    return view;
 }

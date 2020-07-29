@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { HeaderView } from './HeaderView/HeaderView'
 import { Logo } from '../Logo/Logo';
 import { SearchForm } from '../SearchForm/SearchForm';
 import { Login } from '../Login/Login'
 
-export class Header extends React.Component {
-    render() {
-        return <HeaderView>
-            <Logo />
-            <SearchForm />
-            <Login />
-        </HeaderView>
-    }
+interface Props {
+    autorized: boolean,
+    userName: string,
+    setModalTrue: (arg: any) => void,
+    exit: (arg: any) => void
+}
+
+export const Header: FunctionComponent<Props> = (props) =>{
+    const { autorized, userName, setModalTrue, exit } = props;
+    return <HeaderView>
+        <Logo />
+        <SearchForm />
+        <Login exit={exit}
+        setModalTrue={setModalTrue} 
+        autorized = {autorized} 
+        userName={userName}/>
+    </HeaderView>    
 }
