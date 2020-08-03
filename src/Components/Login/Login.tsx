@@ -6,12 +6,13 @@ interface Props {
     autorized: boolean,
     userName: string,
     setModalTrue: (arg: void) => void,
-    exit: (arg: any) => void
+    exit: (arg: any) => void,
+    inputRef: any
 }
 
 export const Login: FunctionComponent<Props> = (props) => {
-    const { autorized, userName, setModalTrue, exit } = props;
+    const { autorized, userName, setModalTrue, exit, inputRef } = props;
     const view = autorized ? <LoginViewEnter userName={userName} exit={exit}/> : 
-    <LoginViewNotEnter setModalTrue={setModalTrue}/>;
+    <LoginViewNotEnter inputRef={inputRef} setModalTrue={setModalTrue}/>;
     return view;
 }

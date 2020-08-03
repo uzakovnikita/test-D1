@@ -18,6 +18,7 @@ interface State {
 export class App extends React.Component<Props, State> {
   refOutside: React.RefObject<HTMLDivElement>;
   refInner: React.RefObject<HTMLFormElement>;
+  refButton: React.RefObject<HTMLButtonElement>;
   static propTypes: { children: any; };
   constructor (props: any) {
     super(props);
@@ -32,6 +33,7 @@ export class App extends React.Component<Props, State> {
     }
     this.refOutside = React.createRef();
     this.refInner = React.createRef();
+    this.refButton = React.createRef();
   }
   handleSetModalTrue = (e: any) => {
     e.stopPropagation();
@@ -41,8 +43,11 @@ export class App extends React.Component<Props, State> {
 
   }
   handleSetModalFalse = (e: any) => {
-    e.stopPropagation()
-    if (this.refInner.current && !this.refInner.current.contains(e.target)) {
+    const isModalBuild = !!this.refInner.current;
+    const modalIsContainsTargetClick = !!this.refInner.current?.contains(e.target);
+    const isClickOnButton = this.refButton.current?.contains(e.target);
+    const modal = (isModalBuild && modalIsContainsTargetClick) || isClickOnButton;
+    if (!modal) {
       this.setState({modal: false})
     }
   }
@@ -80,6 +85,14 @@ export class App extends React.Component<Props, State> {
                   remember: false,
                   modal: false })
   }
+  componentDidMount() {
+    const bodyEl = document.querySelector('body');
+    bodyEl?.addEventListener('click', this.handleSetModalFalse)
+  }
+  componentWillUnmount() {
+    const bodyEl = document.querySelector('body');
+    bodyEl?.removeEventListener('click', this.handleSetModalFalse)
+  }
   render () {
     const Auth = this.state.modal ? 
     (<Autorization 
@@ -98,7 +111,8 @@ export class App extends React.Component<Props, State> {
           <Header exit={this.handleExit} 
           setModalTrue={this.handleSetModalTrue} 
           autorized={this.state.autorized} 
-          userName={this.state.userName}/>
+          userName={this.state.userName}
+          inputRef={this.refButton}/>
         </div>
     );
   }
