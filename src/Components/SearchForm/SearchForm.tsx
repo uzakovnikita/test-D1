@@ -18,10 +18,11 @@ export class SearchForm extends React.Component {
     handleSearch = async (e: React.MouseEvent) => {
         const response = await fetch(this.state.text);
         console.log(response)
+        this.setState({text: ''})
     }
     render() {
         return (
-            <SearchFormView change={this.handleChange} search={this.handleSearch}/>
+            <SearchFormView change={this.handleChange} search={this.handleSearch} text={this.state.text}/>
         )
     }
 }

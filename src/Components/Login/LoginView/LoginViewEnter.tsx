@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-
+import  './LoginView.scss'
 interface Props {
     exit: (arg: any) => void,
     userName: string

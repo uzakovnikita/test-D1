@@ -1,0 +1,29 @@
+.search {
+    width: 34.06779661%;
+    height: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.search__input {
+    width: 79.6%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #333333;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.search__button {
+    color: #E5261E;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    width: 12.4%;
+    padding-left: 7.96%;
+}

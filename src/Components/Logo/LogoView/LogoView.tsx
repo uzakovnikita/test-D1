@@ -3,7 +3,15 @@ import './LogoView.scss'
 
 export const LogoView: FunctionComponent = () => {
     return <div className="logo">
-        <img className="logo__image" src="/images/sign.svg" alt="sign"/>
-        <p className="logo__text">Видеосервис</p>
+        <tr className="logo__content">
+            <td className="logo__content-cell">  
+                <img className="logo__image" src="/images/sign.svg" alt="sign"/>
+            </td>
+            <td className="logo__content-cell">
+                <p className="logo__text">Видеосервис</p>
+            </td>
+
+
+        </tr>
     </div>
 }

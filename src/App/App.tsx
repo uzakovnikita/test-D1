@@ -3,6 +3,7 @@ import './App.scss';
 import {Header} from '../Components/Header/Header';
 import { Autorization } from '../Components/Autorization/Autorization'
 
+
 interface Props {};
 interface State {
   userNameText: string,
@@ -11,12 +12,13 @@ interface State {
   password: string
   remember: boolean,
   autorized: boolean,
-  modal: string,
+  modal: boolean,
 }
 
 export class App extends React.Component<Props, State> {
   refOutside: React.RefObject<HTMLDivElement>;
-  refInner: React.RefObject<any>;
+  refInner: React.RefObject<HTMLFormElement>;
+  static propTypes: { children: any; };
   constructor (props: any) {
     super(props);
     this.state = {
@@ -26,24 +28,23 @@ export class App extends React.Component<Props, State> {
       password: '',
       remember: false,
       autorized: false,
-      modal: 'net',
+      modal: false,
     }
     this.refOutside = React.createRef();
     this.refInner = React.createRef();
   }
-  handleSetModalTrue = () => {
-    console.log('op')
-    this.setState({modal: 'da'})
-    const updateModal = 'da'
-    console.log(this.state)
+  handleSetModalTrue = (e: any) => {
+    e.stopPropagation();
+    e.preventDefault();
+    const updateModal = true
     this.setState({modal: updateModal})
+
   }
   handleSetModalFalse = (e: any) => {
-    console.log(e.currentTarget === this.refInner.current)
-    if (e.currentTarget !== this.refInner.current) {
-      this.setState({modal: 'net'})
+    e.stopPropagation()
+    if (this.refInner.current && !this.refInner.current.contains(e.target)) {
+      this.setState({modal: false})
     }
-    console.log('vsem privet')
   }
   handleChangePasswordText = (e: React.FormEvent<HTMLInputElement>) => {
     const updatedPassword = e.currentTarget.value;
@@ -76,29 +77,24 @@ export class App extends React.Component<Props, State> {
                   autorized: true, 
                   userNameText: '', 
                   passwordText: '', 
-                  remember: false })
-  }
-  componentDidMount() {
-    document.addEventListener('click', this.handleSetModalFalse);
-  }
-  componentWillUnmount() {
-    document.removeEventListener('click', this.handleSetModalFalse);
+                  remember: false,
+                  modal: false })
   }
   render () {
-    const Auth = this.state.modal === 'da'? 
+    const Auth = this.state.modal ? 
     (<Autorization 
-        ref={this.refInner}
+        inputRef={this.refInner}
         remember={this.state.remember} 
-        userNameText={this.state.userName}
-        passwordText={this.state.password} 
+        userNameText={this.state.userNameText}
+        passwordText={this.state.passwordText} 
         submit={this.handleSubmit}
         changePassword={this.handleChangePasswordText} 
         changeUserName={this.handleChangeUserNameText}
         changeRemember={this.handleChangeRemember}/>) : null;
 
     return (  
-        <div className="App" ref={this.refOutside}>
-          {Auth}  
+        <div className="App" onClick={this.handleSetModalFalse} ref={this.refOutside}>
+          {Auth}
           <Header exit={this.handleExit} 
           setModalTrue={this.handleSetModalTrue} 
           autorized={this.state.autorized} 
@@ -107,4 +103,3 @@ export class App extends React.Component<Props, State> {
     );
   }
 }
-
