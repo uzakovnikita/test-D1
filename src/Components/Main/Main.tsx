@@ -1,8 +1,9 @@
-import React, { Children } from 'react';
-import {MainView} from './MainView/MainView';
-import {MovieCard} from '../MovieCard/MovieCard';
-import {GenreCard} from '../GenreCard/GenreCard';
-import {Channel} from '../Channel/Channel';
+import React from 'react';
+import { MainFilmsView } from './MainView/MainFilmsView';
+import { MainChannelsView } from './MainView/MainChannelsView'
+import './MainView/MainView.scss'
+import cn from 'classnames';
+
 
 interface Props {}
 interface State {
@@ -26,30 +27,37 @@ export class Main extends React.Component<Props, State> {
         })
     }
     render() {
-        const content = this.state.tabs === 'films' ? (
-            <div className="new">
-                <div className="new__title">
-                    <p className="new__text">Новинки</p>
-                    <img src="" alt="" className="new__logo"/>
-                </div>
-                <MovieCard/>
-                <MovieCard/>
-                <MovieCard/>
-                <GenreCard/>
-                <GenreCard/>
-                <GenreCard/>
-            </div>
-        ) : (
-            <div className="genres">
-                <div className="genres__title">
-                    <p className="genres__text">Жанры</p>
-                </div>
-                <Channel/>
-                <Channel/>
-                <Channel/>
-                <Channel/>
-            </div>
-        )
-        return <MainView handleClickOnFilms={this.handleClickOnFilms} handleClickOnChannels={this.handleClickOnChannels}>{content}</MainView>
+        const klassFilmsButton = cn({
+            'tabs__button': true,
+            'tabs__button_onSet': this.state.tabs === 'films'
+        })
+        const klassChannelsButton = cn({
+            'tabs__button': true,
+            'tabs__button_onSet': this.state.tabs === 'channels'
+        })
+        const klassFilmsTabsLine = cn({
+            'tabs__line': true,
+            'tabs__line_not-vision': this.state.tabs !== 'films'
+        })
+        const klassChannelsTabsLine = cn({
+            'tabs__line': true,
+            'tabs__line_not-vision': this.state.tabs !== 'channels'
+        })
+        const tabs = (<div className="tabs">
+                        <div className="tabs__button-container">
+                            <button className={klassFilmsButton} onClick={this.handleClickOnFilms}>Фильмы</button>
+                            <hr className={klassFilmsTabsLine}/>
+                        </div>
+                        <div className="tabs__button-container">
+                            <button className={klassChannelsButton} onClick={this.handleClickOnChannels}>Телеканалы</button>
+                            <hr className={klassChannelsTabsLine}/>
+                        </div>
+                    </div>)
+        const content = this.state.tabs === 'films' ? <MainFilmsView /> : <MainChannelsView />       
+        const result = (<main>
+                            {tabs}
+                            {content}
+                        </main>)     
+        return result;    
     }
 }

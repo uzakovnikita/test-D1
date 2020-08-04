@@ -1,7 +1,6 @@
-.genres {
-    color: red($color: #d32b2b);
+.App {
+    max-width: 1180px;
+    margin: 0 auto;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background-color: #FFFFFF;
+    flex-direction: column;
 }

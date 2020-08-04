@@ -9,7 +9,7 @@ interface Props {
     userName: string,
     setModalTrue: (arg: any) => void,
     exit: (arg: any) => void,
-    inputRef: any
+    inputRef: any   
 }
 
 export const Header: FunctionComponent<Props> = (props) =>{

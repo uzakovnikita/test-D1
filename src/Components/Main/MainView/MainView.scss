@@ -1,0 +1,50 @@
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.new {
+    display: flex;
+    flex-direction: column;
+}
+
+.new__films {
+    display: flex;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 44px;
+}
+
+.tabs__button-container {
+    width: fit-content;
+    text-align: center;
+}
+
+.tabs__button {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-size: 28px;
+    padding: 0 12px;
+}
+
+.tabs__button_onSet {
+    color: red;
+}
+
+.tabs__line {
+    text-align: center;
+    border: none;
+    height: 2px;
+    background-color: red;
+    width: 87%;
+}
+
+.tabs__line_not-vision {
+    opacity: 0;
+}

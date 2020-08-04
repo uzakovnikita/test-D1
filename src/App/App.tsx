@@ -2,7 +2,7 @@ import React, { MouseEvent } from 'react';
 import './App.scss';
 import {Header} from '../Components/Header/Header';
 import { Autorization } from '../Components/Autorization/Autorization'
-
+import { Main } from '../Components/Main/Main'
 
 interface Props {};
 interface State {
@@ -36,7 +36,6 @@ export class App extends React.Component<Props, State> {
     this.refButton = React.createRef();
   }
   handleSetModalTrue = (e: any) => {
-    e.stopPropagation();
     e.preventDefault();
     const updateModal = true
     this.setState({modal: updateModal})
@@ -113,6 +112,7 @@ export class App extends React.Component<Props, State> {
           autorized={this.state.autorized} 
           userName={this.state.userName}
           inputRef={this.refButton}/>
+          <Main/>
         </div>
     );
   }
