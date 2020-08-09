@@ -1,0 +1,40 @@
+.genres__card {
+    width: 280px;
+    height: 208px;
+    border-radius: 6px;
+    position: relative;
+    text-align: center;
+}
+
+.genres__image-content {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0
+}
+
+.genres__text-content {
+    position: absolute;
+    left: 34.64%;
+    right: 35%;
+    top: 76.92%;
+    bottom: 11.54%;
+}
+
+.genres__card_comedies {
+    background: linear-gradient(127.83deg, #F2C94C 8.44%, #F29A4A 91.36%);
+}
+
+.genres__card_drams {
+    background: linear-gradient(127.83deg, #F2994A 8.44%, #EB5757 91.36%);
+}
+
+.genres__card_fantastic {
+    background: linear-gradient(127.83deg, #56CCF2 8.44%, #2F80ED 91.36%);
+}
+
+.genres__card_horrors {
+    background: linear-gradient(127.83deg, #828282 8.44%, #333333 91.36%);
+}

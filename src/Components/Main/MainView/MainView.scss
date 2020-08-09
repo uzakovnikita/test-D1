@@ -4,47 +4,26 @@ main {
     flex-direction: column;
 }
 
-.new {
+.novelties {
     display: flex;
     flex-direction: column;
 }
 
-.new__films {
+.novelties__container {
     display: flex;
+    justify-content: space-between;
 }
 
-.tabs {
+.novelties__title {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.genres__container {
     display: flex;
-    justify-content: center;
     flex-direction: row;
-    margin-top: 44px;
-}
-
-.tabs__button-container {
-    width: fit-content;
-    text-align: center;
-}
-
-.tabs__button {
-    outline: none;
-    border: none;
-    background-color: transparent;
-    font-size: 28px;
-    padding: 0 12px;
-}
-
-.tabs__button_onSet {
-    color: red;
-}
-
-.tabs__line {
-    text-align: center;
-    border: none;
-    height: 2px;
-    background-color: red;
-    width: 87%;
-}
-
-.tabs__line_not-vision {
-    opacity: 0;
+    justify-content: space-between;
 }

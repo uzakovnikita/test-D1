@@ -1,14 +1,22 @@
-import React from 'react';
-import './GenreCardView.scss';
-export class GenreCardView extends React.Component<{genre: string, img: string, imgAlt: string}> {
-    render() {
-        const genreCardClass = `genre-card__${this.props.genre}`;
-        const genreCardTextContentClass = `${genreCardClass}__text-content-${this.props.genre}`
-        return(<>
-        <div className={genreCardClass}>
-            <img src={this.props.img} alt={this.props.imgAlt}/>
-            <p className={genreCardTextContentClass}>GenreCardView</p>
-        </div>
-        </>)
-    }
+import React from "react";
+import "./GenreCardView.scss";
+export class GenreCardView extends React.Component<{
+  genre: string;
+  img: string;
+  imgAlt: string;
+  genreRus: string;
+}> {
+  render() {
+    const genreCardClass = `genres__card genres__card_${this.props.genre}`;
+    return (
+      <div className={genreCardClass}>
+        <img
+          className="genres__image-content"
+          src={this.props.img}
+          alt={this.props.imgAlt}
+        />
+        <p className="genres__text-content">{this.props.genreRus}</p>
+      </div>
+    );
+  }
 }
