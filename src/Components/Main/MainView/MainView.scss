@@ -7,11 +7,19 @@ main {
 .novelties {
     display: flex;
     flex-direction: column;
+    margin-bottom: 32px;
+}
+
+.novelties__title {
+    left: 0px;
+    top: 0px;
+    margin-bottom: 16px;
 }
 
 .novelties__container {
     display: flex;
     justify-content: space-between;
+    max-height: 478px;
 }
 
 .novelties__title {
@@ -26,4 +34,13 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.genres__title {
+    margin-bottom: 16px;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
 }
