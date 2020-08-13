@@ -1,6 +1,12 @@
+.root,
+html,
+body {
+    height: 100%;
+}
+
 .App {
-    max-width: 1180px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }

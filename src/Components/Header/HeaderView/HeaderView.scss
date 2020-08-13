@@ -1,4 +1,5 @@
 header {
+    max-width: 1180px;
     padding-top: 32px;
     width: 100%;
     margin-left: auto;
@@ -7,4 +8,5 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: red($color: red);
+    margin-bottom: 44px;
 }

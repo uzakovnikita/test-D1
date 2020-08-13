@@ -1,7 +1,31 @@
 nav {
     max-width: 311px;
+    width: 26.3559322%;
+    max-height: 42px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 27px;
+}
+
+.nav__link {
+    color: #333333 !important;
+    text-decoration: none;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.75rem;
+    // font-size: 1.9444444vw;
+    // font-size: 5vw;
+    line-height: 33px;
+    text-align: right;
+    text-decoration: none;
+}
+
+.nav__link_active {
+    display: block;
+    color: #e5261e !important;
+    padding-bottom: 9px;
+    border-bottom: 2px solid #e5261e;
 }

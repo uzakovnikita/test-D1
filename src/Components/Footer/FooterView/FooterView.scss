@@ -1,0 +1,35 @@
+footer {
+    width: 100%;
+    height: 120px;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: left;
+}
+
+.footer-content {
+    margin: 0 auto;
+    max-width: 1180px;
+    display: flex;
+    width: 100%;
+    justify-content: left;
+    align-items: center;
+}
+
+.footer-content__text-container {
+    margin-left: 40px;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.footer-content__text_light {
+    margin-top: 10px;
+    color: #1f4766;
+}
+
+.footer-content__link {
+    text-decoration: none;
+    border: none;
+}

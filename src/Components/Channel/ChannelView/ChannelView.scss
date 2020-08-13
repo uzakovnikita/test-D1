@@ -1,0 +1,43 @@
+.channel-container {
+    margin-bottom: 16px;
+    height: 162px;
+    background: #F2F2F2;
+    width: 100%;
+    display: flex;
+}
+
+.channel-container__image-container {
+    display: flex;
+    width: 33.898%;
+    max-width: 400px;
+    justify-content: center;
+}
+
+.channel-container__title {
+    padding-top: 21px;
+    padding-bottom: 17px;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.channel-container__programms {
+    display: grid;
+    max-width: 694px;
+    width: 58.8135593%;
+    grid-template-columns: 62px 694px;
+    grid-template-rows: 19px;
+    vertical-align: center;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    padding-bottom: 12px;
+}
+
+.channel-container__programms_active {
+    color: #E5261E;
+}

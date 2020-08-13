@@ -18,12 +18,14 @@
 }
 
 .search__button {
-    color: #E5261E;
+    background-color: transparent;
+    color: #e5261e;
     font-family: Rubik;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
-    width: 12.4%;
-    padding-left: 7.96%;
+    border: none;
+    text-align: center;
+    outline: none;
 }
