@@ -1,45 +1,35 @@
-import React from 'react';
-import './MovieCardView.scss';
-import cn from 'classnames';
+import React from "react";
+import "./MovieCardView.scss";
 
-interface mouseMove {
-    (): void;
-}
-interface stats {
-    mouseEnter: string;
-}
 interface Props {
-    enter: mouseMove
-    leave: mouseMove
-    state: {
-        mouseEnter: string
-    }
-    image: string
-    text: string
+  image: string;
+  title: string;
 }
 export class MovieCardView extends React.Component<Props> {
-    static defaultProps = {
-        image: '',
-        text: 'default text'
-    }
-    render(): any {
-        const {enter, leave, state, image, text} = this.props;
-        const oppacityPredicate = state.mouseEnter === 'enter' ? true : false;
-        const klass = cn({
-            'movie-сard__text': true,
-            'movie-card__text_disabled': oppacityPredicate
-        })
-        return (
-        <div className='movie-card' onMouseLeave = {leave} onMouseEnter = {enter}>
-            <div className='movie-card__container'>
-                <div className='movie-card__image'>
-                    <img className='movie-card__image-content' alt="alt"src={image}></img>
-                </div>
-                <div className={klass}>
-                    <p className='movie-card__text-content'>{text}</p>
-                </div>
-            </div>
+  static defaultProps = {
+    image: "",
+    title: "default text",
+  };
+  render() {
+    const { image, title } = this.props;
+    return (
+      <div className="movie-card">
+        <div className="movie-card__content-container">
+          <img
+            className="movie-card__image-content"
+            alt="alt"
+            src={image}></img>
+          <a href="#" className="movie-card__text-content">
+            Фильм повествует о череде событий, произошедших в Голливуде в 1969
+            году, на закате его «золотого века». Известный актер Рик Далтон и
+            его дублер Клифф Бут пытаются найти свое место в стремительно
+            меняющемся мире киноиндустрии.
+          </a>
         </div>
-       )
-    }
-}   
+        <div className="movie-сard__title-container">
+          <p className="movie-card__title">{title}</p>
+        </div>
+      </div>
+    );
+  }
+}

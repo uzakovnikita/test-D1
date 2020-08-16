@@ -1,9 +1,21 @@
-.genres__card {
-    width: 280px;
+.genres__link {
+    display: flex;
+    text-decoration: none;
+    max-width: 280px;
+    width: 23.7288136%;
     height: 208px;
+}
+
+.genres__card {
+    width: 100%;
+    height: 100%;
     border-radius: 6px;
     position: relative;
     text-align: center;
+    opacity: 0.8;
+    &:hover {
+        opacity: 1;
+    }
 }
 
 .genres__image-content {
@@ -12,27 +24,30 @@
     left: 0;
     top: 0;
     bottom: 0;
-    right: 0
+    right: 0;
 }
 
 .genres__text-content {
-    position: absolute;
-    left: 34.64%;
-    right: 35%;
-    top: 76.92%;
-    bottom: 11.54%;
+    margin-top: 160px;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+    /* identical to box height */
+    color: #ffffff;
 }
 
 .genres__card_comedies {
-    background: linear-gradient(127.83deg, #F2C94C 8.44%, #F29A4A 91.36%);
+    background: linear-gradient(127.83deg, #f2c94c 8.44%, #f29a4a 91.36%);
 }
 
 .genres__card_drams {
-    background: linear-gradient(127.83deg, #F2994A 8.44%, #EB5757 91.36%);
+    background: linear-gradient(127.83deg, #f2994a 8.44%, #eb5757 91.36%);
 }
 
 .genres__card_fantastic {
-    background: linear-gradient(127.83deg, #56CCF2 8.44%, #2F80ED 91.36%);
+    background: linear-gradient(127.83deg, #56ccf2 8.44%, #2f80ed 91.36%);
 }
 
 .genres__card_horrors {

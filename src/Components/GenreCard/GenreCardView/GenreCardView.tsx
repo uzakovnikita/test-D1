@@ -9,14 +9,17 @@ export class GenreCardView extends React.Component<{
   render() {
     const genreCardClass = `genres__card genres__card_${this.props.genre}`;
     return (
-      <div className={genreCardClass}>
-        <img
-          className="genres__image-content"
-          src={this.props.img}
-          alt={this.props.imgAlt}
-        />
-        <p className="genres__text-content">{this.props.genreRus}</p>
-      </div>
+      // eslint-disable-next-line
+      <a className="genres__link" href="#">
+        <div className={genreCardClass}>
+          <img
+            className="genres__image-content"
+            src={this.props.img}
+            alt={this.props.imgAlt}
+          />
+          <p className="genres__text-content">{this.props.genreRus}</p>
+        </div>
+      </a>
     );
   }
 }

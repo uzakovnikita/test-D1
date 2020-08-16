@@ -119,14 +119,6 @@ export class App extends React.Component<Props, State> {
       modal: false,
     });
   };
-  componentDidMount() {
-    const bodyEl = document.querySelector("body");
-    bodyEl?.addEventListener("click", this.handleSetModalFalse);
-  }
-  componentWillUnmount() {
-    const bodyEl = document.querySelector("body");
-    bodyEl?.removeEventListener("click", this.handleSetModalFalse);
-  }
   render() {
     const Auth = this.state.modal ? (
       <Autorization
@@ -144,7 +136,7 @@ export class App extends React.Component<Props, State> {
     return (
       <div
         className="App"
-        onClick={this.handleSetModalFalse}
+        onMouseDown={this.handleSetModalFalse}
         ref={this.refOutside}>
         {Auth}
         <Header

@@ -10,21 +10,20 @@ export const MainFilmsView: FunctionComponent<Props> = (props: Props) => {
       <div className="novelties__container">
         <MovieCard
           image={`./images/catMovie.svg`}
-          text={"Мульт в кино. Выпуск №103. Некогда грустить!"}
+          title={"Мульт в кино. Выпуск №103. Некогда грустить!"}
         />
-        <MovieCard image={"./images/batmanMovie.svg"} text={"Новый Бэтмэн"} />
+        <MovieCard image={"./images/batmanMovie.svg"} title={"Новый Бэтмэн"} />
         <MovieCard
           image={"./images/hollywoodMovie.svg"}
-          text={"Однажды...в Голливуде"}
+          title={"Однажды...в Голливуде"}
         />
         <MovieCard
           image={"./images/strippersMovie.svg"}
-          text={"Стриптизершы"}
+          title={"Стриптизершы"}
         />
       </div>
     </div>
   );
-
   const genres = (
     <div className="genres">
       <p className="genres__title">Жанры</p>
