@@ -38,16 +38,13 @@ export class Autorization extends React.Component<Props> {
                   type="password"
                   placeholder="Пароль"></input>
                 <div className="autorization__remember-container">
-                  <input
-                    className="autorization__remember-button"
-                    onChange={this.props.changeRemember}
-                    checked={this.props.remember}
-                    type="checkbox"
-                    value="Запомнить"
-                    id="remember"></input>
-                  <label
-                    className="autorization__remember-label"
-                    htmlFor="remember">
+                  <label className="autorization__check">
+                    <input
+                      className="autorization__checkbox"
+                      onChange={this.props.changeRemember}
+                      checked={this.props.remember}
+                      type="checkbox"
+                      value="Запомнить"></input>
                     Запомнить
                   </label>
                 </div>

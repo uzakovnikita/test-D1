@@ -1,9 +1,12 @@
 .channel-container {
     margin-bottom: 16px;
     height: 162px;
-    background: #F2F2F2;
+    background: #f2f2f2;
     width: 100%;
     display: flex;
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 
 .channel-container__image-container {
@@ -39,5 +42,5 @@
 }
 
 .channel-container__programms_active {
-    color: #E5261E;
+    color: #e5261e;
 }
