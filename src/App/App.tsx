@@ -71,11 +71,16 @@ export class App extends React.Component<Props, State> {
       passwordText: updatedPassword,
     });
   };
-  handleChangeUserNameText = (
-    e: React.FormEvent<HTMLInputElement> | string
-  ) => {
+  handleSetUserNameText = (e: string) => {
+    this.setState({
+      userNameText: e,
+    });
+    console.log(
+      `handleSetUserNameText - properties in state.userNameText - ${this.state.userNameText}`
+    );
+  };
+  handleChangeUserNameText = (e: React.FormEvent<HTMLInputElement>) => {
     let updateUserName: string;
-    console.log(e);
     if (typeof e === "string") {
       updateUserName = e;
     } else {
@@ -102,8 +107,10 @@ export class App extends React.Component<Props, State> {
   handleSubmit = (e: React.FormEvent<MouseEvent>) => {
     e.preventDefault();
     const newUserName = this.state.userNameText;
+    console.log(
+      `handleSubmit in APP - userNameText properties in state = ${this.state.userNameText}`
+    );
     const password = this.state.passwordText;
-    console.log(password);
     if (this.state.remember) {
       localStorage.setItem("user", newUserName);
       localStorage.setItem("password", password);
@@ -133,7 +140,7 @@ export class App extends React.Component<Props, State> {
         changeRemember={this.handleChangeRemember}
       />
     ) : null;
-
+    console.log(`${this.state.userName} APP`);
     return (
       <div
         className="App"
@@ -146,6 +153,9 @@ export class App extends React.Component<Props, State> {
           autorized={this.state.autorized}
           userName={this.state.userName}
           inputRef={this.refButton}
+          changeUserNameText={this.handleChangeUserNameText}
+          setUserNameText={this.handleSetUserNameText}
+          submit={this.handleSubmit}
         />
         <Routing autorized={this.state.autorized} />
         <Footer />

@@ -48,7 +48,6 @@ export class Autorization extends React.Component<Props> {
                     Запомнить
                   </label>
                 </div>
-
                 <input
                   className="autorizaton__signin"
                   type="submit"

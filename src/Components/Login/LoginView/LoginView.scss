@@ -17,3 +17,26 @@
         background: #cc221b;
     }
 }
+
+.login__text {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.login__exit {
+    margin-left: 16px;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    background: transparent;
+    color: #e5261e;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    cursor: pointer;
+}

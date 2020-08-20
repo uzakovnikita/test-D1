@@ -7,6 +7,7 @@ export const MainChannelsView: FunctionComponent = (props: Props) => {
   return (
     <div className="channels">
       <Scrollbars
+        thumbSize={500}
         renderTrackVertical={(props) => (
           <div {...props} className="track-vertical" />
         )}
