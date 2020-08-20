@@ -44,10 +44,8 @@ export class LoginViewEnter extends React.Component<Props, State> {
   render() {
     const { exit, userName } = this.props;
     console.log(userName);
-    const { field, text, initial } = this.state;
+    const { field, text } = this.state;
     if (field === "user") {
-      console.log(`${field} field`);
-      console.log(`${userName} username in field`);
       return (
         <div className="login">
           <span onClick={this.handleSwap} className="login__text">

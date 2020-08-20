@@ -87,10 +87,7 @@ main {
 }
 
 .track-horizontal {
-    display: flex;
-    justify-content: center;
-    height: 6px;
-    border-radius: 3px;
+    display: none;
 }
 
 .track-horizontal .thumb-horizontal {
