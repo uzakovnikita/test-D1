@@ -16,9 +16,8 @@
     text-align: center;
 }
 
-@media screen and (max-widht: 500px) {
+@media screen and (max-width: 500px) {
     .logo {
-        flex: 1 1 300px;
         color: red;
         margin: 0 auto;
         margin-bottom: 20px;

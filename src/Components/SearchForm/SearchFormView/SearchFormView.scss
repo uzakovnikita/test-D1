@@ -1,5 +1,11 @@
 .search {
+    margin: 0 auto;
     width: 34.06779661%;
+    min-width: 280px;
+    max-width: 402px;
+    position: absolute;
+    left: 0;
+    right: 0;
     height: 25px;
     display: flex;
     align-items: center;
@@ -29,4 +35,12 @@
     border: none;
     text-align: center;
     outline: none;
+}
+
+@media screen and (max-width: 430px) {
+    .search {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        position: inherit;
+    }
 }

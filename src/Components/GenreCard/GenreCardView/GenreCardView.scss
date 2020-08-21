@@ -53,3 +53,10 @@
 .genres__card_horrors {
     background: linear-gradient(127.83deg, #828282 8.44%, #333333 91.36%);
 }
+
+@media screen and (max-width: 430px) {
+    .genres__link {
+        max-width: none;
+        flex: 1 1 200px;
+    }
+}

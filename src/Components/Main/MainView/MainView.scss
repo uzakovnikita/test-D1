@@ -57,6 +57,7 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .genres__title {
@@ -107,4 +108,14 @@ main {
     overflow: scroll;
     margin-right: -15px;
     margin-bottom: -17px !important;
+}
+
+@media screen and (max-width: 430px) {
+    main {
+        padding-bottom: 0px;
+    }
+    .genres__container {
+        max-width: none;
+        justify-content: center;
+    }
 }

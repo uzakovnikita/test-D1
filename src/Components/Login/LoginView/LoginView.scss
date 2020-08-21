@@ -40,3 +40,9 @@
     line-height: 19px;
     cursor: pointer;
 }
+
+@media screen and (max-width: 430px) {
+    .login {
+        margin: 0 auto;
+    }
+}

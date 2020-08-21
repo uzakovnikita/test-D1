@@ -110,3 +110,9 @@
         background-color: #cc221b;
     }
 }
+
+@media screen and (max-width: 430px) {
+    .popup__body {
+        width: 100%;
+    }
+}
