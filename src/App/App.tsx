@@ -75,9 +75,6 @@ export class App extends React.Component<Props, State> {
     this.setState({
       userNameText: e,
     });
-    console.log(
-      `handleSetUserNameText - properties in state.userNameText - ${this.state.userNameText}`
-    );
   };
   handleChangeUserNameText = (e: React.FormEvent<HTMLInputElement>) => {
     let updateUserName: string;
@@ -107,9 +104,6 @@ export class App extends React.Component<Props, State> {
   handleSubmit = (e: React.FormEvent<MouseEvent>) => {
     e.preventDefault();
     const newUserName = this.state.userNameText;
-    console.log(
-      `handleSubmit in APP - userNameText properties in state = ${this.state.userNameText}`
-    );
     const password = this.state.passwordText;
     if (this.state.remember) {
       localStorage.setItem("user", newUserName);
@@ -140,7 +134,6 @@ export class App extends React.Component<Props, State> {
         changeRemember={this.handleChangeRemember}
       />
     ) : null;
-    console.log(`${this.state.userName} APP`);
     return (
       <div
         className="App"

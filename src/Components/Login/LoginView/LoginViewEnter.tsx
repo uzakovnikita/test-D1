@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 import "./LoginView.scss";
 interface Props {
   exit: (arg: any) => void;
@@ -43,7 +43,6 @@ export class LoginViewEnter extends React.Component<Props, State> {
   };
   render() {
     const { exit, userName } = this.props;
-    console.log(userName);
     const { field, text } = this.state;
     if (field === "user") {
       return (

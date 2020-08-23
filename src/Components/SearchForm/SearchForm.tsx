@@ -17,7 +17,6 @@ export class SearchForm extends React.Component {
   handleSearch = async (e: React.FormEvent<HTMLInputElement>) => {
     e.preventDefault();
     const response = await fetch(this.state.text);
-    console.log(response);
     this.setState({ text: "" });
   };
   render() {

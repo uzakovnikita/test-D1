@@ -40,6 +40,11 @@
     padding-left: 5.7142857%;
     padding-right: 5.7142857%;
     padding-top: 5.7142857%;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.25rem;
+    line-height: 140%;
     &:hover {
         opacity: 1;
         background-color: rgba($color: #000000, $alpha: 0.8);
@@ -56,4 +61,10 @@
     font-weight: normal;
     font-size: 20px;
     line-height: 24px;
+}
+
+@media screen and (max-width: 430px) {
+    .movie-card__text-content {
+        font-size: 0.65rem;
+    }
 }

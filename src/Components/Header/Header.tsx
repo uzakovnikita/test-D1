@@ -26,7 +26,7 @@ export const Header: FunctionComponent<Props> = (props) => {
     submit,
     setUserNameText,
   } = props;
-  console.log(`${userName} header`);
+
   return (
     <HeaderView>
       <Logo />
